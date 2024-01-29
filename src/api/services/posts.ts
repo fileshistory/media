@@ -1,7 +1,7 @@
-import { TAlbum } from "../../types/album"
 import { httpClient } from "../client"
 import { settings } from "../../settings"
 import useSWR from "swr"
+import { TPost } from "../../types/post"
 import { calculateOffset } from "../utils"
 
 type RequestType = {
@@ -10,18 +10,18 @@ type RequestType = {
    perPage: number
 }
 
-type ResponseType = Array<TAlbum>
+type ResponseType = Array<TPost>
 
-export const fetchAlbums = async (request: RequestType) => {
+export const fetchPosts = async (request: RequestType) => {
    const offset = calculateOffset(request.page, request.perPage)
-   const url = `/albums?_start=${offset}&_limit=${request.perPage}`
+   const url = `/posts?_start=${offset}&_limit=${request.perPage}`
 
    const response = await httpClient.get<ResponseType>(url)
    return response.data
 }
 
-export const useAlbumsFetch = (userId: number, page: number) => {
+export const usePostsFetch = (userId: number, page: number) => {
    const perPage = settings.albums.perPage
-   const { data, isLoading } = useSWR({ page, perPage, userId }, fetchAlbums)
-   return { albums: data, isLoading }
+   const { data, isLoading } = useSWR({ page, perPage, userId }, fetchPosts)
+   return { posts: data, isLoading }
 }

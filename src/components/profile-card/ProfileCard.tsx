@@ -22,9 +22,9 @@ export const ProfileCard: FC<ProfileCardProps> = ({ id, name }) => {
                Lorem, ipsum dolor.
             </p>
             <div className="flex m-8 mt-auto space-x-4">
-               <button className="w-1/2 bg-[#046BA5] hover:bg-[#118FD6] transition rounded-full text-white font-bold h-14">
+               <Link to={`/users/${id}/posts/1`} className="w-1/2 bg-[#046BA5] hover:bg-[#118FD6] transition rounded-full text-white font-bold h-14 text-center leading-[54px]">
                   Posts
-               </button>
+               </Link>
                <Link to={`/users/${id}/albums/1`} className="w-1/2 text-[#046BA5] rounded-full underline font-bold h-14 leading-[54px] text-center">
                   Albums
                </Link>
