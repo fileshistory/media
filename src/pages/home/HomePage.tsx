@@ -14,7 +14,7 @@ export const HomePage: FC = () => {
    return (
       <div className="grid grid-cols-2 place-items-center w-fit mx-auto gap-4 mt-4">
          {users.map((user, index) => (
-            <ProfileCard key={index} name={user.name} />
+            <ProfileCard key={index} id={user.id} name={user.name} />
          ))}
       </div>
    )

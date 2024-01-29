@@ -1,10 +1,12 @@
 import { FC } from "react"
+import { Link } from "react-router-dom"
 
 type ProfileCardProps = {
+   id: number
    name: string
 }
 
-export const ProfileCard: FC<ProfileCardProps> = ({ name }) => {
+export const ProfileCard: FC<ProfileCardProps> = ({ id, name }) => {
    return (
       <div className="pt-10">
          <div className="w-[400px] h-[200px] rounded-3xl shadow bg-white flex flex-col">
@@ -23,9 +25,9 @@ export const ProfileCard: FC<ProfileCardProps> = ({ name }) => {
                <button className="w-1/2 bg-[#046BA5] hover:bg-[#118FD6] transition rounded-full text-white font-bold h-14">
                   Posts
                </button>
-               <button className="w-1/2 text-[#046BA5] rounded-full underline font-bold h-14">
+               <Link to={`/users/${id}/albums/1`} className="w-1/2 text-[#046BA5] rounded-full underline font-bold h-14 leading-[54px] text-center">
                   Albums
-               </button>
+               </Link>
             </div>
          </div>
       </div>
