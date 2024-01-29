@@ -5,6 +5,7 @@ import { Search } from "../../components/search/Search"
 import { useSearchParams } from "react-router-dom"
 import _ from "lodash"
 import { TSearchOrder } from "../../types/search-order"
+import { Grid } from "../../components/grid/Grid"
 
 const searchOptions = {
    name: "Name",
@@ -32,11 +33,11 @@ export const HomePage: FC = () => {
    return (
       <div>
          <Search options={searchOptions} />
-         <div className="grid grid-cols-2 place-items-center w-fit mx-auto gap-4 mt-8">
+         <Grid className="mt-16">
             {orderedUsers?.map((user, index) => (
                <ProfileCard key={index} id={user.id} name={user.name} />
             ))}
-         </div>
+         </Grid>
       </div>
    )
 } 

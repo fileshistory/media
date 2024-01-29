@@ -11,7 +11,7 @@ export const ProfileCard: FC<ProfileCardProps> = ({ id, name }) => {
       <div className="pt-10">
          <div className="w-[400px] h-[200px] rounded-3xl shadow bg-white flex flex-col">
             <img
-               className="w-20 h-20 rounded-full border-4 border-white mx-auto -mt-10"
+               className="w-20 h-20 rounded-full border-4 border-white mx-auto -mt-10 text-transparent bg-white"
                alt={name}
                src={`https://random.imagecdn.app/80/80?seed=${name}`}
             />

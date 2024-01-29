@@ -7,7 +7,7 @@ type PostCardProps = {
 
 export const PostCard: FC<PostCardProps> = ({ title, body }) => {
    return (
-      <div className="w-[400px] rounded-3xl shadow bg-white flex flex-col overflow-hidden p-1 pb-5">
+      <div className="w-full rounded-3xl shadow bg-white flex flex-col overflow-hidden p-1 pb-5">
          <img
             className="w-full h-40 rounded-[20px] mx-auto text-transparent"
             alt={title}

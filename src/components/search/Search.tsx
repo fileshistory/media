@@ -33,19 +33,19 @@ export const Search: FC<SearchProps> = ({ options }) => {
    }
 
    return (
-      <div className="h-20 rounded-full w-full bg-white max-w-4xl mx-auto mt-8 p-4 flex">
+      <div className="rounded w-full bg-white max-w-4xl mx-auto p-4 flex flex-col md:flex-row items-center gap-4">
          <input
             value={searchTerm}
             onChange={e => setSearchTerm(e.target.value)}
             type="text"
-            className="w-full h-full text-2xl rounded-full px-4 outline-none font-mono"
+            className="w-full h-10 text-2xl rounded-full px-4 outline-none font-mono leading-none"
             placeholder="Search"
          />
          <div className="flex items-center">
             <select
                value={searchBy}
                onChange={e => setSearchBy(e.target.value)}
-               className="w-40 px-4 rounded-full h-12 bg-zinc-300 ml-2"
+               className="w-40 px-4 rounded-full h-12 bg-zinc-300"
             >
                {Object.keys(options).map((option, index) => (
                   <option key={index} value={option}>

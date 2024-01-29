@@ -6,9 +6,9 @@ type AlbumCardProps = {
 
 export const AlbumCard: FC<AlbumCardProps> = ({ title }) => {
    return (
-      <div className="w-[400px] rounded-3xl shadow bg-white flex flex-col overflow-hidden p-1 pb-5">
+      <div className="w-full rounded-3xl shadow bg-white flex flex-col overflow-hidden p-1 pb-5">
          <img
-            className="w-full h-40 rounded-[20px] mx-auto"
+            className="w-full h-40 rounded-[20px] mx-auto text-transparent"
             alt={title}
             src={`https://random.imagecdn.app/400/160?seed=${title}`}
          />

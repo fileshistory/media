@@ -4,6 +4,7 @@ import { AlbumCard } from "../../components/album-card/AlbumCard"
 import { Link, useParams } from "react-router-dom"
 import { Spinner } from "../../components/spinner/Spinner"
 import { preventDefaultWhile } from "../../helpers/prevent-default-while"
+import { Grid } from "../../components/grid/Grid"
 
 export const AlbumsPage: FC = () => {
 
@@ -14,11 +15,11 @@ export const AlbumsPage: FC = () => {
 
    return (
       <div>
-         <div className="grid grid-cols-3 place-items-center w-fit mx-auto gap-4 mt-4">
+         <Grid>
             {albums?.map((album, index) => (
                <AlbumCard key={index} title={album.title} />
             ))}
-         </div>
+         </Grid>
          <div className="mx-auto mt-10 flex justify-center">
             <Link
                to={`/users/${userId}/albums/${Number(page) - 1}`}
